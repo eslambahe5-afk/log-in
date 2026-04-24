@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | Ocean Login</title>
+    
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 font-cairo text-slate-100 h-screen overflow-hidden flex">
+
+
+    <div class="hidden lg:flex lg:w-1/2 relative overflow-hidden group">
+        
+        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2070&auto=format&fit=crop" 
+             alt="Deep Ocean" 
+             class="absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-110">
+        
+        <!-- Filter تغميق الصورة عشان النص يبان -->
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 to-slate-900/90"></div>
+        
+        <!-- المحتوى النصي فوق الصورة -->
+        <div class="relative z-10 flex flex-col justify-between p-16 h-full text-white">
+            <div class="mt-12">
+                <h1 class="text-5xl font-bold mb-4 leading-tight"><br></h1>
+                <p class="text-lg text-slate-200 font-light opacity-90 max-w-md">
+                    ا
+                </p>
+            </div>
+            
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-12 h-12 rounded-full bg-blue-600/20 flex items-center justify-center border border-blue-500/30 backdrop-blur-sm">
+                    <i class="fa-solid fa-water text-blue-400"></i>
+                </div>
+                <span class="font-semibold text-blue-100 tracking-wide"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- القسم الأيسر: فورم تسجيل الدخول (Night Sky Tone) -->
+    <div class="w-full lg:w-1/2 flex items-center justify-center p-8 relative bg-slate-950">
+        
+        <!-- خلفية زخرفية (Glow Effect) -->
+        <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]"></div>
+
+        <div class="w-full max-w-md relative z-10">
+            <!-- Logotype / Header -->
+            <div class="mb-10 text-center lg:text-right">
+                <div class="inline-flex items-center justify-center lg:justify-end gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shadow-lg shadow-blue-500/20">
+                        <i class="fa-solid fa-layer-group text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-white">نطاقك</span>
+                </div>
+                <h2 class="text-3xl font-bold text-white mb-2">تسجيل الدخول</h2>
+                <p class="text-slate-400">أ بيانات الدخول.</p>
+            </div>
+
+            <!-- Form -->
+            <form class="space-y-6" onsubmit="event.preventDefault(); alert('تم إرسال البيانات!');">
+                
+                <!-- Email Field -->
+                <div class="space-y-2">
+                    <label class="block text-sm font-semibold text-slate-300 ms-1">البريد الإلكتروني</label>
+                    <div class="relative group">
+                        <div class="absolute inset-y-0 right-0 ps-3 flex items-center pointer-events-none text-slate-500 group-focus-within:text-blue-500 transition-colors">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <input type="email" 
+                               class="w-full bg-slate-900/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block ps-10 p-3.5 transition-all duration-300 placeholder-slate-600 outline-none hover:border-slate-600" 
+                               placeholder="example@company.com" required>
+                    </div>
+                </div>
+
+                <!-- Password Field -->
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between ms-1">
+                        <label class="block text-sm font-semibold text-slate-300">كلمة المرور</label>
+                        <a href="#" class="text-sm text-blue-400 hover:text-blue-300 transition-colors font-medium">نسيت كلمة المرور؟</a>
+                    </div>
+                    <div class="relative group">
+                        <div class="absolute inset-y-0 right-0 ps-3 flex items-center pointer-events-none text-slate-500 group-focus-within:text-blue-500 transition-colors">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <input type="password" 
+                               class="w-full bg-slate-900/50 border border-slate-700 text-white text-sm rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 block ps-10 p-3.5 transition-all duration-300 placeholder-slate-600 outline-none hover:border-slate-600" 
+                               placeholder="••••••••" required>
+                        <button type="button" 
+                                onclick="togglePassword(); return false;"
+                                class="absolute inset-y-0 left-0 pe-3 flex items-center text-slate-500 hover:text-white cursor-pointer transition-colors ms-2">
+                            <i id="toggle-btn" class="fa-regular fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Remember Me -->
+                <div class="flex items-center ms-1">
+                    <div class="flex items-center h-5">
+                        <input id="rememberme" type="checkbox" class="w-4 h-4 accent-blue-600 bg-slate-800 border-slate-700 rounded focus:ring-blue-600 focus:ring-offset-slate-900">
+                    </div>
+                    <label for="rememberme" class="ms-2 text-sm text-slate-400 leading-5">تذكرني</label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" 
+                        class="w-full text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 focus:ring-4 focus:ring-blue-800 font-medium rounded-xl text-lg px-5 py-3.5 text-center shadow-lg shadow-blue-900/30 transition-all duration-300 transform hover:-translate-y-0.5">
+                    تسجيل الدخول
+                </button>
+
+                <!-- Divider -->
+                <div class="relative my-6">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-slate-700"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-4 bg-slate-950 text-slate-500">أ</span>
+                    </div>
+                </div>
+
+                <!-- Social Login -->
+                <div class="grid grid-cols-2 gap-4">
+                    <button type="button" class="flex items-center justify-center gap-3 w-full px-4 py-2.5 text-sm font-medium text-slate-300 bg-slate-800/50 border border-slate-700 rounded-xl hover:bg-slate-800 hover:text-white transition-colors">
+                        <i class="fa-brands fa-google text-red-400"></i>
+                        Google
+                    </button>
+                    <button type="button" class="flex items-center justify-center gap-3 w-full px-4 py-2.5 text-sm font-medium text-slate-300 bg-slate-800/50 border border-slate-700 rounded-xl hover:bg-slate-800 hover:text-white transition-colors">
+                        <i class="fa-brands fa-apple"></i>
+                        Apple
+                    </button>
+                </div>
+
+            </form>
+
+            <!-- Footer Sign Up -->
+            <div class="mt-10 text-center">
+                <p class="text-slate-400">
+                    
+                    <a href="#" class="text-blue-500 hover:text-blue-400 font-medium transition-colors">سجل حساب جديد</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JS للتحكم في إظهار الباسورد -->
+    <script>
+        function togglePassword() {
+            const passwordInput = document.querySelector('input[type="password"]');
+            const toggleBtn = document.getElementById('toggle-btn');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleBtn.classList.remove('fa-eye');
+                toggleBtn.classList.add('fa-eye-slash');
+                toggleBtn.style.color = '#60a5fa'; // blue-400
+            } else {
+                passwordInput.type = 'password';
+                toggleBtn.classList.remove('fa-eye-slash');
+                toggleBtn.classList.add('fa-eye');
+                toggleBtn.style.color = ''; // revert to default
+            }
+        }
+    </script>
+</body>
+</html>
